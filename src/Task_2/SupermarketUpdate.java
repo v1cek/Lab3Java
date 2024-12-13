@@ -25,11 +25,11 @@ class Stock {
     }
 }
 
-class Cashier implements Runnable {
+class Cashier2 implements Runnable {
     private final int cashierId;
     private final Stock stock;
 
-    public Cashier(int cashierId, Stock stock) {
+    public Cashier2(int cashierId, Stock stock) {
         this.cashierId = cashierId;
         this.stock = stock;
     }
@@ -58,7 +58,7 @@ public class SupermarketUpdate {
 
         // Створення та запуск потоків
         for (int i = 1; i <= numberOfCashiers; i++) {
-            Thread cashierThread = new Thread(new Cashier(i, stock));
+            Thread cashierThread = new Thread(new Cashier2(i, stock));
             cashierThread.start();
         }
     }
